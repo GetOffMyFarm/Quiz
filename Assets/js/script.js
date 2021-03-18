@@ -8,13 +8,22 @@ var question4 = document.getElementById('question4');
 var question5 = document.getElementById('question5');
 var questions = [question1, question2, question3, question4, question5];
 var startMenu = document.getElementById('card1');
-var answer1 = document.querySelector('input[name="json"]:checked');
+var answer1 = document.querySelector('input[name="json"]');
 var answer2 = document.querySelector('input[name="log"]:checked');
 var answer3 = document.querySelector('input[name="reset"]:checked');
 var answer4 = document.querySelector('input[name="flexbox"]:checked');
 var answer5 = document.querySelector('input[name="api"]:checked');
 answers = [answer1, answer2, answer3, answer4, answer5];
 var lastCard = document.getElementById('high-score-page');
+var turnIndex = 0;
+var radioButton = document.querySelectorAll('input[type=radio]');
+
+console.log(radioButton);
+for (var i = 0; i <radioButton.length; i++) {
+    radioButton[i].addEventListener("click", function(event) {
+        console.log("change", event.target.value);
+    });
+};
 
 function countDown() {
     var newTime = 60;
@@ -34,17 +43,15 @@ function countDown() {
 
 
 start.addEventListener("click", function() {
-    countDown();
+    startGame();
     startMenu.style.display = "none";
-    question1.style.display = "flex";
-    for (var i=0; i<questions.length; i++) {
-        if (answers[i].value === "right") {
-            questions[i].style.display = "none";
-            questions[i+1].style.display = "flex";
-        }
-        else {
-            newTime -= 10;
-        }
-    }
+});
 
-})
+function startGame() {
+    countDown();
+    showQuestion();    
+};
+function showQuestion() {
+    //question1.style.display = "flex";
+    questions[turnIndex].style.display = "flex";
+}
