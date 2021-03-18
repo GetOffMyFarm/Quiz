@@ -8,19 +8,19 @@ var question4 = document.getElementById('question4');
 var question5 = document.getElementById('question5');
 var questions = [question1, question2, question3, question4, question5];
 var startMenu = document.getElementById('card1');
-var answer1 = document.querySelector('input[name="json"]:checked');
-var answer2 = document.querySelector('input[name="log"]:checked');
-var answer3 = document.querySelector('input[name="reset"]:checked');
-var answer4 = document.querySelector('input[name="flexbox"]:checked');
-var answer5 = document.querySelector('input[name="api"]:checked');
-answers = [answer1, answer2, answer3, answer4, answer5];
+var answer1 = document.querySelectorAll('input[name = "json"]');
+var answer2 = document.querySelectorAll('input[name = "log"]');
+var answer3 = document.querySelectorAll('input[name = "reset"]');
+var answer4 = document.querySelectorAll('input[name = "flexbox"]');
+var answer5 = document.querySelectorAll('input[name = "api"]');
+var answers = [answer1, answer2, answer3, answer4, answer5];
 var lastCard = document.getElementById('high-score-page');
 
 function countDown() {
     var newTime = 60;
     
     var timerInt = setInterval(function() {
-        if (newTime > 1) {
+        if (newTime > 0) {
             timer.textContent = newTime;
             newTime--;
          }
@@ -31,20 +31,11 @@ function countDown() {
     }, 1000)
 };
 
-
-
 start.addEventListener("click", function() {
     countDown();
     startMenu.style.display = "none";
     question1.style.display = "flex";
-    for (var i=0; i<questions.length; i++) {
-        if (answers[i].value === "right") {
-            questions[i].style.display = "none";
-            questions[i+1].style.display = "flex";
-        }
-        else {
-            newTime -= 10;
-        }
-    }
+});
 
-})
+answer1.addEventListener()
+
