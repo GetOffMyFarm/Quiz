@@ -25,4 +25,4 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
-A launched version of this application can be found at: https://getoffmyfarm.github.io/Beginners_Coding_Quiz/
+A launched version of this application can be found at: https://getoffmyfarm.github.io/Quiz/
