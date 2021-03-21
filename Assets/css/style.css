@@ -22,6 +22,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
 .quiz-card {
     display: flex;
     flex-direction: column;
@@ -32,13 +36,10 @@ body {
     padding: 2%;
     width: 55%;
     border-color: #28283E;
+    align-items: center;
+    justify-content: space-around;
     color: #28283E;
-}
-.quiz-card li {
-    display: inline;
-    opacity: 0;
-    position: fixed;
-    width: 0;
+    margin-top: 8%;
 }
 .quiz-card button {
     align-self: flex-start;
@@ -56,10 +57,38 @@ body {
     background-color: #FF6F59;
     border-color: #28283E; 
 }
+.action-buttons {
+    color: #FFFFC7;
+    display: inline-block;
+    background-color: #28283E;
+    padding: 10px 20px;
+    border: 2px solid #28283E;
+    width: 20%;
+}
+.action-buttons:active {
+    background-color: #ffffc7;
+    color: #28283E;
+}
 #high-score-page {
     display: none;
     flex-direction: column;
     margin: 3%;
+    margin-top: 15%;
+    background-color: #faf33e;
+    border: solid;
+    border-width: 1rem;
+    padding: 2%;
+    width: 55%;
+    border-color: #28283e;
+    align-items: center;
+    justify-content: space-around;
+    color: #28283E;
+}
+#game-over-page {
+    display: none;
+    flex-direction: column;
+    margin: 3%;
+    margin-top: 15%;
     background-color: #faf33e;
     border: solid;
     border-width: 1rem;
@@ -88,18 +117,6 @@ body {
     color: #28283E;
     margin-top: 8%;
 }
-#card1 button {
-    color: #FFFFC7;
-    display: inline-block;
-    background-color: #28283E;
-    padding: 10px 20px;
-    border: 2px solid #28283E;
-    width: 20%;
-}
-#card1 button:active {
-    background-color: #ffffc7;
-    color: #28283E;
-}
 #card1 h1, #card1 p, #card1 button {
     margin: 2%;
 }
@@ -124,6 +141,27 @@ body {
     align-items: flex-end;
 }
 #top-bar p {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 2vw;
+}
+#bottom-bar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 6%;
+    justify-content: center;
+    background-color: #faf33e;
+    color: #28283E;
+    border-top-style: solid;
+    border-top-color: #28283E;
+    border-top-width: 10px;
+    align-items: center;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+}
+#bottom-bar p {
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     font-size: 2vw;

@@ -12,19 +12,22 @@
     </head>
     <body>
         <header id="header">
+            <!--Top bar that displays score and timer-->
             <div id="top-bar">
                 <p>HIGH SCORE: <span id="hScore">0</span></p>
                 <p>TIME: <span id="timer">60</span></p>
             </div>
+            <!--Opening element that people can use to start the game-->
             <section id="card1">     
                 <h1>CODING QUIZ CHALLENGE</h1>
                 <p>Take this quiz to test your skills as a beginner programmer!</p>
-                <button id="start-button">Start!</button>
+                <button id="start-button" class="action-buttons">Start!</button>
             </section>
     </header>
         <main id="quiz">
+            <!--Empty card filled with empty buttons to be filled in by Javascript-->
             <section class="quiz-card" id="quiz-card">
-                <h2></h2>
+                <h2 id="questions"></h2>
                 <ul>
                     <li><button value="wrong"></button></li>
                     <li><button value="wrong"></button><br></li>
@@ -32,13 +35,27 @@
                     <li><button value="wrong"></button><br></li>
                 </ul>
             </section>
-            <section id="high-score-page">
+            <!--High score page displayed if you got the high score, allows you to enter your intitials-->
+            <section id="high-score-page" class="quiz-card">
             <h2>You Finished!</h2>
-            <p id="victory-message"></p>
+            <p id="victory-message">Congrats! You got the high score!</p>
             <label for="highScore">Enter your initials to log your high score!</label>
             <input type="text" name="highScore" id="highScore" required minlength="3" maxlength="3">
+            <button type="submit" id="submit-button" class="action-buttons">Submit!</button>
+            </section>
+            <!--Game over page that displays at the end and allows you to restart-->
+            <section id="game-over-page" class="quiz-card">
+                <h2>Game Over!</h2>
+                <p>Great Job! Check your score down below!</p>
+                <button type="submit" id="restart-game" class="action-buttons">Play Again?</button>
             </section>
         </main>
+        <footer>
+            <!--Bottom bar that displays your current score-->
+            <div id="bottom-bar">
+                <p>Score: <span id="score">0</span></p>
+            </div>
+        </footer>
         <script src="Assets/js/script.js"></script>
     </body>
 </html>
